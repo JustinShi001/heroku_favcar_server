@@ -8,7 +8,8 @@ curl "http://localhost:4741/students" \
   --data '{
     "student": {
       "first_name": "'"${FNAME}"'",
-      "last_name": "'"${LNAME}"'"
+      "last_name": "'"${LNAME}"'",
+      "house_id": "'"${SID}"'"
     }
   }'
 
