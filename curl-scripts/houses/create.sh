@@ -9,7 +9,8 @@ curl "http://localhost:4741/houses" \
     "house": {
       "name": "'"${NAME}"'",
       "animal": "'"${ANIMAL}"'",
-      "slogan": "'"${SLOGAN}"'"
+      "slogan": "'"${SLOGAN}"'",
+      "school_id": "'"${S_ID}"'"
     }
   }'
 
