@@ -1,15 +1,15 @@
 #!/bin/bash
 
-curl "http://localhost:4741/students" \
+curl "http://localhost:4741/favcars" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "student": {
-      "first_name": "'"${FNAME}"'",
-      "last_name": "'"${LNAME}"'",
-      "house_id": "'"${SID}"'"
+    "favcar": {
+      "name": "'"${NAME}"'",
+      "year": "'"${YEAR}"'",
+      "user_id": "'"${USERID}"'"
     }
   }'
 

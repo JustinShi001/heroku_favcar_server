@@ -1,6 +1,6 @@
 # Ex: ID=idgoeshere TOKEN=tokengoeshere sh curl-scripts/examples/destroy.sh
 
-curl "http://localhost:4741/students/${ID}" \
+curl "http://localhost:4741/favcars/${ID}" \
   --include \
   --request DELETE \
   --header "Authorization: Token token=${TOKEN}" \
