@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  # skip_before_action :authenticate, only: %i[signup signin]
+  skip_before_action :authenticate, only: %i[signup signin]
 
   def index
     @users = User.all
