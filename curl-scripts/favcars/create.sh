@@ -8,8 +8,7 @@ curl "http://localhost:4741/favcars" \
   --data '{
     "favcar": {
       "name": "'"${NAME}"'",
-      "year": "'"${YEAR}"'",
-      "user_id": "'"${USERID}"'"
+      "year": "'"${YEAR}"'"
     }
   }'
 
