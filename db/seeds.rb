@@ -9,3 +9,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+    dealers = Dealer.create([{name: 'Tesla Backbay', location: 'Backbay'}, {name: 'BMW Boston', location: 'Boston'}])
