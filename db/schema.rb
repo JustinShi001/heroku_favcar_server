@@ -49,33 +49,6 @@ ActiveRecord::Schema.define(version: 2019_12_16_161656) do
     t.index ["user_id"], name: "index_favcars_on_user_id"
   end
 
-  create_table "houses", force: :cascade do |t|
-    t.string "name"
-    t.string "animal"
-    t.string "slogan"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "school_id"
-    t.index ["school_id"], name: "index_houses_on_school_id"
-  end
-
-  create_table "schools", force: :cascade do |t|
-    t.string "name"
-    t.string "location"
-    t.string "owner"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "students", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "house_id"
-    t.index ["house_id"], name: "index_students_on_house_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "token", null: false
@@ -90,6 +63,4 @@ ActiveRecord::Schema.define(version: 2019_12_16_161656) do
   add_foreign_key "appointments", "users"
   add_foreign_key "examples", "users"
   add_foreign_key "favcars", "users"
-  add_foreign_key "houses", "schools"
-  add_foreign_key "students", "houses"
 end
