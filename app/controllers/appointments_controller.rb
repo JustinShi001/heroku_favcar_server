@@ -3,7 +3,7 @@ class AppointmentsController < ProtectedController
 
   # GET /appointments
   def index
-    @appointments = Appointment.all
+    @appointments = current_user.appointments
 
     render json: @appointments
   end
@@ -15,7 +15,7 @@ class AppointmentsController < ProtectedController
 
   # POST /appointments
   def create
-    @appointment = Appointment.new(appointment_params)
+    @appointment = current_user.appointments.build(appointment_params)
 
     if @appointment.save
       render json: @appointment, status: :created, location: @appointment
@@ -41,11 +41,11 @@ class AppointmentsController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_appointment
-      @appointment = Appointment.find(params[:id])
+      @appointment = current_user.appointments.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def appointment_params
-      params.require(:appointment).permit(:dealer_id, :user_id, :date)
+      params.require(:appointment).permit(:dealer_id, :date)
     end
 end
